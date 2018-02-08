@@ -3,7 +3,8 @@ from wtforms import fields
 from peewee import (CharField, DateTimeField, DateField, TimeField,
                     PrimaryKeyField, ForeignKeyField)
 try:
-    from peewee import BaseModelexcept ImportError:
+    from peewee import BaseModel
+except ImportError:
     from peewee import ModelBase as BaseModel
 
 from wtfpeewee.orm import ModelConverter, model_form
